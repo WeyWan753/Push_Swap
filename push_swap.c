@@ -6,7 +6,7 @@
 /*   By: wabin-wa <wabin-wa@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 18:44:28 by wabin-wa          #+#    #+#             */
-/*   Updated: 2026/07/15 00:43:06 by wabin-wa         ###   ########.fr       */
+/*   Updated: 2026/07/15 02:08:48 by wabin-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,47 @@ int	valid_input(int argc, char **argv)
 {
 	int	i;
 	int	j;
+	int have_digit;
 
+	have_digit = -1;
 	if (argc == 1)
-		return (-1);
+		return (0);
 	i = 0;
 	while (++i < argc)
 	{
 		j = -1;
 		while (argv[i][++j])
-			if ((argv[i][j] < '0' || argv[i][j] > '9') &&
-				argv[i][j] != ' ' && argv[i][j] != '\t' &&
-				argv[i][j] != '+' && argv[i][j] != '-')
-				return (-1);
+		{
+			if (!('0' <= argv[i][j] && argv[i][j] <= '9') && argv[i][j] != '-' && argv[i][j] != ' ' && argv[i][j] != '+' && argv[i][j])
+				return -1;
+			if ((argv[i][j] == '-' || argv[i][j] == '+') && !('0' <= argv[i][j+1] && argv[i][j+1] <= '9'))
+				return -1;
+			if ('0' <= argv[i][j] && argv[i][j] <= '9' && !('0' <= argv[i][j+1] && argv[i][j+1] <= '9') && argv[i][j+1] != ' ' && argv[i][j+1])
+				return -1;
+			if ('0' <= argv[i][j] && argv[i][j] <= '9')
+				have_digit = 1;
+		}
 	}
-	i = 0;
-	while (++i < argc)
-	{
-		j = -1;
-		while (argv[i][++j])
-			if ((argv[i][j] >= '0' && argv[i][j] <= '9') ||
-			argv[i][j] == '-' || argv[i][j] == '+')
-				return (1);
-	}
-	return (0);
+
+	return (have_digit);
 }
+
+
+int is_sorted(t_node *stack)
+{
+	while (stack)
+	{
+		if (stack->next)
+			if (stack->data > stack->next->data)
+				return 0;
+
+		stack = stack->next;
+	}
+	return 1;
+
+
+}
+
 
 void	create_node(int data, t_node **stack)
 {
@@ -343,7 +360,7 @@ void	sort(t_node **stackA, t_node **stackB)
 {
 	t_node *temp;
 	int i;
-	if (*stackA == 0 || (*stackA)->next == 0)
+	if (*stackA == 0 || (*stackA)->next == 0 || is_sorted(*stackA))
 		return;
 	while ((*stackA)->size > 3)
 		push(stackA, stackB, "pb");
@@ -390,7 +407,7 @@ int	main(int argc, char **argv)
 	{
 		if (valid_input(argc, argv) == -1
 			|| check_duplicates(stack_a) == -1 || x == -1)
-			printf("Error\n");
+			write(2, "Error\n", 6);
 		free_mem(stack_a);
 		free_mem(stack_b);
 		return (0);

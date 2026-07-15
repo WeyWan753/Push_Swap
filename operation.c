@@ -6,11 +6,20 @@
 /*   By: wabin-wa <wabin-wa@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 17:30:17 by wabin-wa          #+#    #+#             */
-/*   Updated: 2026/07/15 12:08:48 by wabin-wa         ###   ########.fr       */
+/*   Updated: 2026/07/15 14:04:39 by wabin-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_putstr(char *str)
+{
+	while (*str)
+	{
+		write(1, str, 1);
+		str++;
+	}
+}
 
 void	push(t_node **src, t_node **dest, char *str)
 {
@@ -37,7 +46,7 @@ void	push(t_node **src, t_node **dest, char *str)
 	fix_index(*src);
 	fix_index(*dest);
 	if (*str)
-		printf("%s\n", str);
+		ft_putstr(str);
 }
 
 void	swap(t_node **stack, char *str)
@@ -60,7 +69,7 @@ void	swap(t_node **stack, char *str)
 	*stack = second;
 	fix_index(*stack);
 	if (*str)
-		printf("%s\n", str);
+		ft_putstr(str);
 }
 
 void	rotate(t_node **stack, char *str)
@@ -83,7 +92,7 @@ void	rotate(t_node **stack, char *str)
 	head->next = 0;
 	fix_index(*stack);
 	if (*str)
-		printf("%s\n", str);
+		ft_putstr(str);
 }
 
 void	reverse_rotate(t_node **stack, char *str)
@@ -106,5 +115,5 @@ void	reverse_rotate(t_node **stack, char *str)
 	*stack = tail;
 	fix_index(*stack);
 	if (*str)
-		printf("%s\n", str);
+		ft_putstr(str);
 }

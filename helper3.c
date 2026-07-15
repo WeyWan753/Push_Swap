@@ -6,7 +6,7 @@
 /*   By: wabin-wa <wabin-wa@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:40:39 by wabin-wa          #+#    #+#             */
-/*   Updated: 2026/07/15 12:40:50 by wabin-wa         ###   ########.fr       */
+/*   Updated: 2026/07/15 14:15:30 by wabin-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,9 +108,9 @@ void	final_rotation(t_node **stack)
 	while (*stack != min)
 	{
 		if (min->index <= ((*stack)->size / 2) + 1)
-			rotate(stack, "ra");
+			rotate(stack, "ra\n");
 		else
-			reverse_rotate(stack, "rra");
+			reverse_rotate(stack, "rra\n");
 	}
 }
 

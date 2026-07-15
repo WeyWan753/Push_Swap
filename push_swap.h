@@ -6,7 +6,7 @@
 /*   By: wabin-wa <wabin-wa@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 17:31:03 by wabin-wa          #+#    #+#             */
-/*   Updated: 2026/07/15 12:57:52 by wabin-wa         ###   ########.fr       */
+/*   Updated: 2026/07/15 14:09:59 by wabin-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ void	method1(t_node *temp, t_node **stackA, t_node **stackB);
 void	method2(t_node *temp, t_node **stackA, t_node **stackB);
 void	method3(t_node *temp, t_node **stackA, t_node **stackB);
 void	method(t_node *temp, t_node **stackA, t_node **stackB);
+void	ft_putstr(char *str);
 
 #endif

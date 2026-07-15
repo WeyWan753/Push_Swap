@@ -6,7 +6,7 @@
 /*   By: wabin-wa <wabin-wa@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 18:44:28 by wabin-wa          #+#    #+#             */
-/*   Updated: 2026/07/15 12:44:39 by wabin-wa         ###   ########.fr       */
+/*   Updated: 2026/07/15 14:12:37 by wabin-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ void	solve2or3(t_node **stack)
 		b = (*stack)->next->data;
 		c = (*stack)->next->next->data;
 		if (a > b && a > c)
-			rotate(stack, "ra");
+			rotate(stack, "ra\n");
 		else if (b > a && b > c)
-			reverse_rotate(stack, "rra");
+			reverse_rotate(stack, "rra\n");
 	}
 	if ((*stack)->data > (*stack)->next->data)
-		swap(stack, "sa");
+		swap(stack, "sa\n");
 }
 
 void	sort(t_node **stackA, t_node **stackB)
@@ -76,7 +76,7 @@ void	sort(t_node **stackA, t_node **stackB)
 	if (*stackA == 0 || (*stackA)->next == 0 || is_sorted(*stackA))
 		return ;
 	while ((*stackA)->size > 3)
-		push(stackA, stackB, "pb");
+		push(stackA, stackB, "pb\n");
 	solve2or3(stackA);
 	while (*stackB)
 	{
@@ -89,7 +89,7 @@ void	sort(t_node **stackA, t_node **stackB)
 		}
 		temp = min_cost_node(*stackB);
 		method(temp, stackA, stackB);
-		push(stackB, stackA, "pa");
+		push(stackB, stackA, "pa\n");
 	}
 	final_rotation(stackA);
 }

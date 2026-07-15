@@ -6,7 +6,7 @@
 /*   By: wabin-wa <wabin-wa@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 17:30:26 by wabin-wa          #+#    #+#             */
-/*   Updated: 2026/07/14 21:54:12 by wabin-wa         ###   ########.fr       */
+/*   Updated: 2026/07/15 12:36:19 by pola             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,6 @@ void	fix_index(t_node *stack)
 		stack -> size = i;
 		stack = stack->prev;
 	}
-}
-
-void	print_stack(t_node *stack)
-{
-	while (stack)
-	{
-		printf("%d\n", stack -> data);
-		stack = stack -> next;
-	}
-	printf("\n");
 }
 
 int	is_valid(long long result, int sign, const char *nptr)

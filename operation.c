@@ -6,7 +6,7 @@
 /*   By: wabin-wa <wabin-wa@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 17:30:17 by wabin-wa          #+#    #+#             */
-/*   Updated: 2026/07/14 23:18:49 by wabin-wa         ###   ########.fr       */
+/*   Updated: 2026/07/15 12:08:48 by wabin-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ void	reverse_rotate(t_node **stack, char *str)
 {
 	t_node	*head;
 	t_node	*tail;
-
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;

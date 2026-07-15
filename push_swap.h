@@ -6,7 +6,7 @@
 /*   By: wabin-wa <wabin-wa@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 17:31:03 by wabin-wa          #+#    #+#             */
-/*   Updated: 2026/07/14 23:24:05 by wabin-wa         ###   ########.fr       */
+/*   Updated: 2026/07/15 12:45:07 by wabin-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,19 @@ int		min(int count, ...);
 int		max(int count, ...);
 t_node	*min_node_cost(t_node *stack);
 void	solve3(t_node **stack_a, t_node **stack_b);
+int		input_helper(int i, int j, int argc, char **argv);
+int		valid_input(int argc, char **argv);
+int		is_sorted(t_node *stack);
+void	create_node(int data, t_node **stack);
+int		is_out_of_bounds(const char *str);
+int		init_input(int argc, char **argv, t_node **stack);
+int		find_index(int data, t_node *stack);
+void	calculate_cost(t_node *stackA, t_node *stackB);
+void	final_rotation(t_node **stack);
+t_node	*min_cost_node(t_node *stack);
+void	method1(t_node *temp, t_node **stackA, t_node **stackB);
+void	method2(t_node *temp, t_node **stackA, t_node **stackB);
+void	method3(t_node *temp, t_node **stackA, t_node **stackB);
+void	method(t_node *temp, t_node **stackA, t_node **stackB);
 
 #endif

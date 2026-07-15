@@ -6,7 +6,7 @@
 /*   By: wabin-wa <wabin-wa@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 18:44:28 by wabin-wa          #+#    #+#             */
-/*   Updated: 2026/07/15 14:12:37 by wabin-wa         ###   ########.fr       */
+/*   Updated: 2026/07/15 17:37:22 by wabin-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,7 @@ void	sort(t_node **stackA, t_node **stackB)
 
 	if (*stackA == 0 || (*stackA)->next == 0 || is_sorted(*stackA))
 		return ;
-	while ((*stackA)->size > 3)
-		push(stackA, stackB, "pb\n");
+	smart_push(stackA, stackB);
 	solve2or3(stackA);
 	while (*stackB)
 	{

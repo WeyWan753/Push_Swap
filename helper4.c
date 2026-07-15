@@ -6,7 +6,7 @@
 /*   By: wabin-wa <wabin-wa@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:42:40 by wabin-wa          #+#    #+#             */
-/*   Updated: 2026/07/15 14:11:52 by wabin-wa         ###   ########.fr       */
+/*   Updated: 2026/07/15 17:34:59 by wabin-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,25 @@ void	method(t_node *temp, t_node **stackA, t_node **stackB)
 		method2(temp, stackA, stackB);
 	else
 		method3(temp, stackA, stackB);
+}
+
+void	smart_push(t_node **stackA, t_node **stackB)
+{
+	long long	average;
+	t_node		*temp;
+
+	temp = *stackA;
+	average = 0;
+	while (temp)
+	{
+		average += temp->data;
+		temp = temp->next;
+	}
+	average /= (*stackA)->size;
+	while ((*stackA)->size > 3)
+	{
+		push(stackA, stackB, "pb\n");
+		if ((*stackB)->data < average)
+			rotate(stackB, "rb\n");
+	}
 }

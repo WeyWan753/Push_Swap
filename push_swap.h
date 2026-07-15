@@ -6,7 +6,7 @@
 /*   By: wabin-wa <wabin-wa@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 17:31:03 by wabin-wa          #+#    #+#             */
-/*   Updated: 2026/07/15 12:45:07 by wabin-wa         ###   ########.fr       */
+/*   Updated: 2026/07/15 12:57:52 by wabin-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		min(int count, ...);
 int		max(int count, ...);
 t_node	*min_node_cost(t_node *stack);
 void	solve3(t_node **stack_a, t_node **stack_b);
-int		input_helper(int i, int j, int argc, char **argv);
+int		input_helper(int i, int j, char **argv);
 int		valid_input(int argc, char **argv);
 int		is_sorted(t_node *stack);
 void	create_node(int data, t_node **stack);

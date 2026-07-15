@@ -6,13 +6,13 @@
 /*   By: wabin-wa <wabin-wa@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:37:00 by wabin-wa          #+#    #+#             */
-/*   Updated: 2026/07/15 12:37:16 by wabin-wa         ###   ########.fr       */
+/*   Updated: 2026/07/15 12:58:20 by wabin-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	input_helper(int i, int j, int argc, char **argv)
+int	input_helper(int i, int j, char **argv)
 {
 	if (!('0' <= argv[i][j] && argv[i][j] <= '9') && argv[i][j] != '-'
 		&& argv[i][j] != ' ' && argv[i][j] != '+' && argv[i][j])
@@ -42,7 +42,7 @@ int	valid_input(int argc, char **argv)
 		j = -1;
 		while (argv[i][++j])
 		{
-			if (input_helper(i, j, argc, argv) == -1)
+			if (input_helper(i, j, argv) == -1)
 				return (-1);
 			if ('0' <= argv[i][j] && argv[i][j] <= '9')
 				have_digit = 1;
